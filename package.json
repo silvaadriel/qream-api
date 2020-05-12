@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/src/server.js",
+    "start": "node dist/server.js",
     "dev:server": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
   },
@@ -27,13 +27,16 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/cors": "^2.8.6",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "date-fns": "^2.13.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
     "pg": "^8.1.0",
+    "pg-connection-string": "^2.2.2",
     "typeorm": "^0.2.24",
     "uuidv4": "^6.0.8"
   }
