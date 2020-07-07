@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
+import { classToClass } from 'class-transformer';
 
 import uploadConfig from '../config/upload';
 
@@ -35,9 +36,7 @@ usersRouter.patch(
       avatarFilename: filename,
     });
 
-    delete user.password;
-
-    return response.json(user);
+    return response.json(classToClass(user));
   },
 );
 

@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import { classToClass } from 'class-transformer';
+
 import AuthenticateUserService from '../services/AuthenticateUserService';
 
 const sessionsRouter = Router();
@@ -13,9 +15,7 @@ sessionsRouter.post('/', async (request, response) => {
     password,
   });
 
-  delete user.password;
-
-  return response.json({ user, token });
+  return response.json({ user: classToClass(user), token });
 });
 
 export default sessionsRouter;
